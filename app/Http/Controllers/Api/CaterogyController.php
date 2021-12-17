@@ -29,7 +29,6 @@ class CaterogyController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         return new CategoryResource(Category::create($request->validated()));
-
     }
 
     /**
@@ -53,6 +52,7 @@ class CaterogyController extends Controller
     public function update(StoreCategoryRequest $request, Category $category)
     {
         $category->update($request->validated());
+
         return new CategoryResource($category);
     }
 
