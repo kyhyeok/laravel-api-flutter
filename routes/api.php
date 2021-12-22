@@ -16,14 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-
-
 });
 
-Route::apiResource('categories', \App\Http\Controllers\Api\CaterogyController::class);
-
 Route::group(['middleware' => 'auth:sanctum'], function () {
-//    Route::apiResource('categories', \App\Http\Controllers\Api\CaterogyController::class);
+    Route::apiResource('categories', \App\Http\Controllers\Api\CaterogyController::class);
 
     Route::apiResource('transactions', \App\Http\Controllers\Api\TransactionController::class);
 });
